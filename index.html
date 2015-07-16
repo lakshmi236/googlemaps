@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="Main_app">
+<head>
+    <title></title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="directives.js"></script>
+    <style>
+        #areaMap, #addressMap
+        {
+            height: 400px;
+            width: 400px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="MainController">
+        <table>
+            <tr>
+                <label>Enter valid Address: <input type="text" ng-model="Adress"></label><br>
+            </tr>
+            <tr>
+                <td>
+                    <div address-based-google-map address="Adress" zoom="16"></div>
+                </td>
+                <td>
+                    <div area-based-google-map area="Area" zoom="8"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
